@@ -11,7 +11,7 @@ addpath(genpath('./imgs'));
 im_ampl=im2double(imread('lake.bmp'));
 im_phase=im2double(imread('FAI.bmp'));
 [M,N]=size(im_ampl);
-
+domain=zeros(M,N);
 amp = imresize(im_ampl,[512,512]);
 amp(amp<0)=0;amp(amp>1)=1;
 pha = imresize(im_phase,[512,512]);
@@ -39,13 +39,18 @@ for i=segd
         dx = j*deta;
         k=k+1;
         im_set(:,:,k)=image(M/2-r/2+dy:M/2+r/2-1+dy,N/2-c/2+dx:N/2+c/2-1+dx);
+        domain(M/2-r/2+dy:M/2+r/2-1+dy,N/2-c/2+dx:N/2+c/2-1+dx)=ones(r,c);
         subplot(seg,seg,iter)
         imshow(real(im_set(:,:,k)),[]);
         iter=iter+1;
     end
 end
-
-
+%Construct an RGB image of the scanned domain
+p1=im_ampl+domain;
+p2=im_ampl-domain;
+domainpic(:,:,1)=uint8(floor(255.*p2./max(p1(:))));
+domainpic(:,:,2)=uint8(floor(255.*p1./max(p1(:))));
+domainpic(:,:,3)=uint8(floor(255.*p2./max(p1(:))));
 %%
 %create hole mask
 pixSize = 3*1e-6;
@@ -93,7 +98,8 @@ alpha=0.2;%Learning Rate
 %draw picture
 subplot(2,2,1);imshow(abs(sample_new),[]),title('reconstructed amplitude');
 subplot(2,2,2);imshow(angle(sample_new),[]),title('reconstructed phase');
-subplot(2,2,3);plot(1:epoch,MSE,'LineWidth',1.5),title('Error Descent Curve');xlabel('iteration');ylabel('MSE');
+subplot(2,2,3);imshow(domainpic),title('scan domain');
+subplot(2,2,4);plot(1:epoch,MSE,'LineWidth',1.5),title('Error Descent Curve');xlabel('iteration');ylabel('MSE');
 set(gcf,'color','w')
 
 
