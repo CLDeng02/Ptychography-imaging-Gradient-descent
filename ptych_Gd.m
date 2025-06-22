@@ -52,7 +52,7 @@ pixSize = 3*1e-6;
 mask_x = linspace(-pixSize*r/2,pixSize*r/2,r);
 [x1,y1] = meshgrid(mask_x);
 cir_hole = zeros(r,r);
-cir_hole(abs(x1 + 1i*y1) < r.*pixSize./5) = 1;
+cir_hole(abs(x1 + 1i*y1) < 3*r.*pixSize./10) = 1;
 a = cir_hole;
 figure;imshow(a);
 
