@@ -1,6 +1,6 @@
 %--------------------------------------------------------------------------
 % Author: CL.Deng
-% Email:  cldeng881@gmail.com
+% Email:  cldeng881@gmail.com 
 % For detailed mathematical derivations, please follow our WeChat official account  @智子科普
 %--------------------------------------------------------------------------
 %%
@@ -39,7 +39,7 @@ ab=ab./max(ab(:));
 dA=ab-I2;
 dapph=Propagate(dA.*A.*2,-dist,pixsize,wavelen);%backpropagation operator
 %dapph=(ifft2(dA.*A.*2));
-apph=apph-beta*dapph;%complex graditend descent
+apph=apph-beta*dapph;%complex gradient descent
 mse=sum(dA(:).^2)./(r*c);%mean squared error
 
 subplot(2,2,1)
