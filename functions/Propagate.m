@@ -4,7 +4,7 @@ function [w_o] = Propagate(w_i, dist, pixSize, wavlen)
 [ny,nx] = size(w_i);
 
 % sampling in the frequency domain
-kx = pi/pixSize*(-1:2/nx:1-2/nx);%³¤¶ÈÎªN1
+kx = pi/pixSize*(-1:2/nx:1-2/nx);
 ky = pi/pixSize*(-1:2/ny:1-2/ny);
 [KX,KY] = meshgrid(kx,ky);
 
