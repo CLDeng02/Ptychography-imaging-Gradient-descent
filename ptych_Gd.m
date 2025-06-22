@@ -85,7 +85,7 @@ end
 
 %%
 %Gradient descent
-Mpad = M+20;Npad = N+20;
+Mpad = M;Npad = N;
 P = U;
 sample= ones(Mpad, Npad);
 epoch=200;
