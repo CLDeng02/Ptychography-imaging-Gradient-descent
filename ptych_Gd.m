@@ -27,13 +27,19 @@ figure;imshow(angle(image),[]);
 k=0;r=256;c=256;
 iter=1;
 deta=10;%move step length
-for i=-1:1
-    for j=-1:1
+seg=7;%the number of segment
+if mod(seg,2)==0
+    segd=-seg/2:seg/2-1;
+else
+    segd=-(seg-1)/2:(seg-1)/2;
+end
+for i=segd
+    for j=segd
         dy = i*deta;
         dx = j*deta;
         k=k+1;
         im_set(:,:,k)=image(M/2-r/2+dy:M/2+r/2-1+dy,N/2-c/2+dx:N/2+c/2-1+dx);
-        subplot(3,3,iter)
+        subplot(seg,seg,iter)
         imshow(real(im_set(:,:,k)),[]);
         iter=iter+1;
     end
@@ -63,10 +69,10 @@ imshow(angle(U),[]);title('phase')
 %create the diffraction image set
 Z=0.1;%m
 iter=1;
-for k=1:9
+for k=1:seg*seg
     exitE= U.*im_set(:,:,k);
     diff_set(:,:,k) = Propagate(exitE,Z,pixSize,lambda);
-    subplot(3,3,iter)
+    subplot(seg,seg,iter)
     imshow(real(diff_set(:,:,k)),[]);
     iter=iter+1;
 end
@@ -82,7 +88,7 @@ epoch=200;
 Z=0.1;
 alpha=0.2;%Learning Rate
 
-[sample_new,MSE]= Grad_ptych(diff_set,P,sample,epoch,deta,Z,pixSize,lambda,alpha);
+[sample_new,MSE]= Grad_ptych(diff_set,P,sample,epoch,deta,Z,pixSize,lambda,alpha,segd);
 %%
 %draw picture
 subplot(2,2,1);imshow(abs(sample_new),[]),title('reconstructed amplitude');
