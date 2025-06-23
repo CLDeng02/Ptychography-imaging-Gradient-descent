@@ -32,7 +32,7 @@ a is scaling factor, and $\mathbf{R}$ is unitary matrix. Since the optical inten
 <br>
 
 ```math
-Loss(x.y)=(A^\star A-C)^2=\big( 
+Loss(x,y)=(A^\star A-C)^2=\big( 
 \begin{bmatrix}
 x & y
 \end{bmatrix}
@@ -45,4 +45,85 @@ y
 ```
 <br>
 
+The error Loss is a quadratic function of $(x^2+y^2)$, allowing the solution of $(x, y)$ to be easily obtained . For the case of a single element, there is no requirement for the phase of the solution. When considering multiple elements, the complex amplitude A propagating to the recording plane is expressed as:
+<br>
+
+```math
+\mathbf{A}=\sum_{i}^{N^2}
+\alpha_i R_i
+\begin{bmatrix}
+x_i \\
+y_i
+\end{bmatrix}
+```
+<br>
+
+then, the intesity on recording plane is：
+<br>
+
+```math
+\mathbf{A^\star A}=
+\left( \sum_{j}^{N^2}
+\begin{bmatrix}
+x_j & y_j
+\end{bmatrix}
+\alpha_j R_j^T \right)
+\left( \sum_{i}^{N^2} \alpha_i R_i
+\begin{bmatrix}
+x_i \\
+y_i
+\end{bmatrix}
+ \right) 
+```
+<br>
+
+```math
+=
+\sum_{i\neq j}^{N^4-N^2}
+\alpha_j \alpha_i
+\begin{bmatrix}
+x_j & y_j
+\end{bmatrix}
+ R_j^T R_i
+\begin{bmatrix}
+x_i \\
+y_i
+\end{bmatrix}
+ +
+\sum_{i=j}^{N^2}
+\alpha_j^2 \left( x_j^2+y_j^2 \right)
+```
+<br>
+
+It can be seen that there are cross terms here, and the phase of the solution also needs to be considered.When considering only two elements, the loss function is look like the following equation:
+
+<br>
+
+```math
+argmin \eft( a x_1^2 + bx_2^2 +c y_1^2 +d y_2^2 +e x_1 x_2 +f y_1 y_2 - C \right)^2
+```
+here，For a fixed system,$(a,b,c,d,e,f)$ is a set of fixed coefficients.This is a non-convex optimization problem.By revisiting the original error loss function $Loss(x)$, we can derive its gradient with respect to $A$.
+
+<br>
+
+```math
+\partial{\mathbf{Loss}} /\partial{\mathbf{A}} =2 \eft(A^\star A-C) A^\star
+```
+<br>
+
+backpropagation to the sample plane:
+
+<br>
+
+```math
+\partial{\mathbf{Loss}} /\partial{\mathbf{x}} =\mathbf{D^{-1}}(2 \eft(A^\star A-C) A^\star)
+```
+<br>
+
+Update using gradient descent：
+<br>
+
+```math
+\mathbf{x_new}=\mathbf{x_old}-\beta \partial{\mathbf{Loss}} /\partial{\mathbf{x}}
+```
 
