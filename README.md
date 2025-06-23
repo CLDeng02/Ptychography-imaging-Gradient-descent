@@ -15,7 +15,9 @@ The diffractive optical system is strictly linear, so the propagation of the sys
 \mathbf{A}=D\mathbf{x}
 ```
 <br>
-Here, $D(\cdot)$ denotes the propagation operator,and $\mathbf{x}$ is input vector. For an $N\times N$-size image, $\mathbf{x}$ can be regarded as a column vector of $N^2$ dimension composed of the values of all pixels in the input image. When the input image has only a single complex element $(x+yi)$.<br>
+
+Here, $D(\cdot)$ denotes the propagation operator,and $\mathbf{x}$ is input vector. For an $N\times N$-size image, $\mathbf{x}$ can be regarded as a column vector of $N^2$ dimension composed of the values of all pixels in the input image. When the input image has only a single complex element $(x+yi)$.
+<br>
 
 ```math
 A=\alpha R 
