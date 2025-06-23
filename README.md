@@ -119,7 +119,7 @@ backpropagation to the sample plane:
 <br>
 
 ```math
-\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}=\mathbf{D^{-1}} \left(2 \left(A^\star A-C) A^\star \right)
+\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}=\mathbf{D^{-1}} \left(2 \left(A^\star A-C \right) A^\star \right)
 ```
 <br>
 
@@ -128,6 +128,6 @@ Update using gradient descent：
 <br>
 
 ```math
-\mathbf{x_new}=\mathbf{x_old}-\beta \partial{\mathbf{Loss}} /\partial{\mathbf{x}}
+\mathbf{X_new}=\mathbf{X_old}-\beta \frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}
 ```
 
