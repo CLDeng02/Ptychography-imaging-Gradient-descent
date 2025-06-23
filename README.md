@@ -4,7 +4,7 @@ Recovering the amplitude and phase information of a sample from ptychographic di
 - **ptych_Gd ：** The file "ptych_Gd" is a complete simulation program that applies the gradient descent method to ptychography.
 
 # How does it work ?
-The diffractive optical system is strictly linear, so the propagation of the system can be expressd as fllowing equation://
-$\mathbf{A}=D\mathbf{x}$//
-Here, $D(\cdot)$ denotes the propagation operator,and $\mathbf{x}$ is input vector. For an $N\times N$-size image, $\mathbf{x}$ can be regarded as a column vector of $N^2$ dimension composed of the values of all pixels in the input image.
+The diffractive optical system is strictly linear, so the propagation of the system can be expressd as fllowing equation:\
+$\mathbf{A}=D\mathbf{x}$\
+Here, $D(\cdot)$ denotes the propagation operator,and $\mathbf{x}$ is input vector. For an $N\times N$-size image, $\mathbf{x}$ can be regarded as a column vector of $N^2$ dimension composed of the values of all pixels in the input image.<br> ssss
 
