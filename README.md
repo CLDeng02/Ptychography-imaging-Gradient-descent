@@ -25,7 +25,7 @@ A=\alpha R
 x \\
 y \\
 \end{bmatrix}
-```math
+```
 <br>
 
 a is scaling factor, and $\mathbf{R}$ is unitary matrix. Since the optical intensity signal is received, an error loss function for the domain target distribution $\mathbf{C}$ can be constructed as follows using the $L^2$ -norm:
