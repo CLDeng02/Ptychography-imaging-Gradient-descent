@@ -110,7 +110,7 @@ here，For a fixed system,$(a,b,c,d,e,f)$ is a set of fixed coefficients.This is
 <br>
 
 ```math
-\frac_{\partial{\mathbf{Loss}}}{\partial{\mathbf{A}}} =2 \left(A^\star A-C) A^\star
+\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{A}}} =2 \left(A^\star A-C) A^\star
 ```
 <br>
 
@@ -119,11 +119,12 @@ backpropagation to the sample plane:
 <br>
 
 ```math
-\frac_{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}=\mathbf{D^{-1}} \left(2 \left(A^\star A-C) A^\star \right)
+\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}=\mathbf{D^{-1}} \left(2 \left(A^\star A-C) A^\star \right)
 ```
 <br>
 
 Update using gradient descent：
+
 <br>
 
 ```math
