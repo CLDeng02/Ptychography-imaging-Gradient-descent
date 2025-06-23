@@ -4,7 +4,7 @@ Recovering the amplitude and phase information of a sample from ptychographic di
 - **ptych_Gd ：** The file "ptych_Gd" is a complete simulation program that applies the gradient descent method to ptychography.
 
 <div align = 'center'>
-<img src = "https://github.com/CLDeng02/Ptychography-imaging-Gradient-descent/blob/main/resource/reconstructed%20image.png" width = "300" alt="" align = center />
+<img src = "https://github.com/CLDeng02/Ptychography-imaging-Gradient-descent/blob/main/resource/reconstructed%20image.png" width = "500" alt="" align = center />
 </div><br>
 
 ## How does it work ?<br>
@@ -100,14 +100,14 @@ It can be seen that there are cross terms here, and the phase of the solution al
 <br>
 
 ```math
-argmin \eft( a x_1^2 + bx_2^2 +c y_1^2 +d y_2^2 +e x_1 x_2 +f y_1 y_2 - C \right)^2
+argmin \left( a x_1^2 + bx_2^2 +c y_1^2 +d y_2^2 +e x_1 x_2 +f y_1 y_2 - C \right)^2
 ```
 here，For a fixed system,$(a,b,c,d,e,f)$ is a set of fixed coefficients.This is a non-convex optimization problem.By revisiting the original error loss function $Loss(x)$, we can derive its gradient with respect to $A$.
 
 <br>
 
 ```math
-\partial{\mathbf{Loss}} /\partial{\mathbf{A}} =2 \eft(A^\star A-C) A^\star
+\partial{\mathbf{Loss}}/\partial{\mathbf{A}} =2 \left(A^\star A-C) A^\star
 ```
 <br>
 
@@ -116,7 +116,7 @@ backpropagation to the sample plane:
 <br>
 
 ```math
-\partial{\mathbf{Loss}} /\partial{\mathbf{x}} =\mathbf{D^{-1}}(2 \eft(A^\star A-C) A^\star)
+\partial{\mathbf{Loss}}/\partial{\mathbf{x}} =\mathbf{D^{-1}}(2 \left(A^\star A-C) A^\star)
 ```
 <br>
 
