@@ -4,9 +4,9 @@ Recovering the amplitude and phase information of a sample from ptychographic di
 - **ptych_Gd ：** The file "ptych_Gd" is a complete simulation program that applies the gradient descent method to ptychography.
 
 <div align = 'center'>
-<img src = "https://github.com/THUHoloLab/feature-domain-phase-retrieval/blob/main/Demo/resource/english.gif" width = "650" alt="" align = center />
+<img src = "https://github.com/CLDeng02/Ptychography-imaging-Gradient-descent/blob/main/resource/reconstructed%20image.png" width = "650" alt="" align = center />
 </div><br>
-# How does it work ?
+## How does it work ?<br>
 The diffractive optical system is strictly linear, so the propagation of the system can be expressd as following equation:
 <br>
 ```math
