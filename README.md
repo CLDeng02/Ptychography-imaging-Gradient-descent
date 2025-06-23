@@ -136,4 +136,6 @@ Update using gradient descent：
 ```math
 \mathbf{X_new}=\mathbf{X_old}-\beta \frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{X}}}
 ```
+<br>
 
+In ptychography, we have the intensity distributions of diffraction images corresponding to M scanning positions. Taking these as the target images, we calculate the error gradient for each position and perform a gradient descent for each position. After updating all scanning positions, one epoch iteration is completed. The number of epochs can be set for multiple iterations.
