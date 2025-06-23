@@ -4,7 +4,7 @@ Recovering the amplitude and phase information of a sample from ptychographic di
 - **ptych_Gd ：** The file "ptych_Gd" is a complete simulation program that applies the gradient descent method to ptychography.
 
 <div align = 'center'>
-<img src = "https://github.com/CLDeng02/Ptychography-imaging-Gradient-descent/blob/main/resource/reconstructed%20image.png" width = "650" alt="" align = center />
+<img src = "https://github.com/CLDeng02/Ptychography-imaging-Gradient-descent/blob/main/resource/reconstructed%20image.png" width = "300" alt="" align = center />
 </div><br>
 
 ## How does it work ?<br>
@@ -41,7 +41,7 @@ x & y
 x \\
 y
 \end{bmatrix}
--C \big)^2=\big( \alpha^2 (x^2+y^2) \big)^2
+-C \big)^2=\big( \alpha^2 (x^2+y^2) -C \big)^2
 ```
 <br>
 
