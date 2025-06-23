@@ -110,7 +110,7 @@ here，For a fixed system,$(a,b,c,d,e,f)$ is a set of fixed coefficients.This is
 <br>
 
 ```math
-\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{A}}} =2 \left(A^\star A-C) A^\star
+\frac{\partial{\mathbf{Loss}}}{\partial{\mathbf{A}}} =2 \left(A^\star A-C \right) A^\star
 ```
 <br>
 
