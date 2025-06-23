@@ -111,7 +111,7 @@ argmin \left( a x_1^2 + bx_2^2 +c y_1^2 +d y_2^2 +e x_1 x_2 +f y_1 y_2 - C \righ
 
 <br>
 
-here，For a fixed system,$(a,b,c,d,e,f)$ is a set of fixed coefficients.This is a non-convex optimization problem.By revisiting the original error loss function $Loss(x)$, we can derive its gradient with respect to $A$.
+here，For a fixed system,$\left( a,b,c,d,e,f \right)$ is a set of fixed coefficients.This is a non-convex optimization problem.By revisiting the original error loss function $Loss(x)$, we can derive its gradient with respect to $A$.
 
 <br>
 
